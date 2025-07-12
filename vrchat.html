@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Raman Tarasau</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VRChat Projects</title>
   <style>
     /* Reset & base */
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -38,27 +38,19 @@
       padding-bottom: 0.2em;
     }
 
-    /* Home section */
-    #home { text-align: center; }
-    #home h1 { font-size: 3em; margin-bottom: 0.2em; }
-    #home p { font-size: 1.2em; }
-
     /* VRChat section */
-    #vrchat .gallery {
+    .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 1em;
     }
-    #vrchat .gallery img {
+    .gallery img {
       width: 100%;
       height: auto;
       border-radius: 8px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.5);
     }
-    #vrchat p { margin: 1em 0; }
   </style>
-</head>
-
 </head>
 <body>
   <header>
@@ -67,18 +59,20 @@
       <a href="vrchat.html">VRChat</a>
     </nav>
   </header>
-  <main>
-    <!-- Home Section -->
-    <section id="home">
-      <h1>Raman Tarasau</h1>
-      <p>Indie Developer</p>
-      <div class="links">
-        <a href="https://github.com/Exicross" target="_blank">GitHub</a>
-        <a href="https://t.me/ramantarasau" target="_blank">Telegram</a>
-      </div>
-    </section>
 
-    <!-- Добавьте другие секции по аналогии -->
+  <main>
+    <h1>VRChat Projects</h1>
+    <p>Here you can find everything I've created for VRChat.</p>
+    <div class="gallery">
+      <img src="images/poster.png" alt="Avatar Preview">
+      <img src="images/vrchat2.jpg" alt="World Preview">
+      <img src="images/vrchat3.jpg" alt="Interior Preview">
+      <img src="images/vrchat4.jpg" alt="Custom Item">
+    </div>
+    <h2>Latest event</h2>
+    <div class="gallery">
+    <img src="images/poster.png" alt="Latest event">
+    </div> 
   </main>
 </body>
 </html>

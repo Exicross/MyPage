@@ -51,6 +51,52 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.5);
     }
   </style>
+
+  <style>
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.85);
+    cursor: zoom-out;
+  }
+
+  .modal-content {
+    display: block;
+    margin: 5% auto;
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(255,255,255,0.2);
+  }
+
+  .close {
+    position: absolute;
+    top: 20px; right: 30px;
+    color: #fff;
+    font-size: 36px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .gallery img {
+    transition: transform 0.2s ease-in-out;
+    cursor: zoom-in;
+  }
+
+  .gallery img:hover {
+    transform: scale(1.02);
+  }
+
+  .centered-title {
+  text-align: center;
+  font-size: 1.5em;
+  margin-top: 1em;
+  margin-bottom: 0em;
+}
+</style>
 </head>
 <body>
   <header>
@@ -63,7 +109,7 @@
   <main>
     <h1>VRChat Projects</h1>
     <p>Here you can find everything I've created for VRChat.</p>
-    <p>Wolrd "Derelict SIGNAL"</p>
+    <h1 class="centered-title">World "Derelict SIGNAL"</h1>
     <div class="gallery">
       <img src="images/Signal_1.png" alt="SIGNAL World Preview">
       <img src="images/Signal_2.png" alt="SIGNAL World Preview">
@@ -71,22 +117,43 @@
       <img src="images/Signal_4.png" alt="SIGNAL World Preview">
     </div>
 
-    <p>Wolrd "Derelict EXPLR"</p>
+    <!--<h1 class="centered-title">World "Derelict EXPLR"</h1>
     <div class="gallery">
       <img src="images/poster.jpg" alt="Avatar Preview">
       <img src="images/vrchat2.jpg" alt="World Preview">
       <img src="images/vrchat3.jpg" alt="Interior Preview">
       <img src="images/vrchat4.jpg" alt="Custom Item">
-    </div>
+    </div> -->
 
-        <p>Wolrd "Derelict EXPLR: Side Effect"</p>
+    <h1 class="centered-title">World "Derelict EXPLR: Side Effect"</h1>
     <div class="gallery">
-      <img src="images/poster.jpg" alt="Avatar Preview">
-      <img src="images/vrchat2.jpg" alt="World Preview">
-      <img src="images/vrchat3.jpg" alt="Interior Preview">
-      <img src="images/vrchat4.jpg" alt="Custom Item">
+      <img src="images/SE_1.png" alt="Side Effect World Preview">
+      <img src="images/SE_2.png" alt="Side Effect World Preview">
+      <img src="images/SE_3.png" alt="Side Effect World Preview">
+      <img src="images/SE_4.png" alt="Side Effect World Preview">
     </div>
 
   </main>
+  <!-- Modal -->
+<div id="imageModal" class="modal" onclick="closeModal()">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="modalImage" alt="Zoomed image">
+</div>
+<script>
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImage");
+
+  document.querySelectorAll('.gallery img').forEach(img => {
+    img.addEventListener('click', () => {
+      modal.style.display = "block";
+      modalImg.src = img.src;
+      modalImg.alt = img.alt;
+    });
+  });
+
+  function closeModal() {
+    modal.style.display = "none";
+  }
+</script>
 </body>
 </html>
